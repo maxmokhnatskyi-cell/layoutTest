@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--color-zinc-950);
+  --color-foreground: var(--color-white);
+  --breakpoint-sm: 720px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
