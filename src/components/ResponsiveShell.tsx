@@ -4,9 +4,10 @@ import MobileTabBar from './MobileTabBar'
 
 type ResponsiveShellProps = {
   children?: ReactNode
+  tabBar?: ReactNode
 }
 
-export function ResponsiveShell({ children }: ResponsiveShellProps) {
+export function ResponsiveShell({ children, tabBar }: ResponsiveShellProps) {
   return (
     <div className="min-h-screen bg-zinc-100 text-zinc-900">
       {/* Fixed left sidebar */}
@@ -28,13 +29,14 @@ export function ResponsiveShell({ children }: ResponsiveShellProps) {
       {/* Main content area offset by topbar; adds sidebar offset on ≥640px and room for mobile tabbar */}
       <main className="min-h-screen bg-zinc-100 pt-16 pl-0 sm:pl-[250px] pb-24 sm:pb-0">
         <div className="px-4 py-6 sm:px-6 xl:px-8">
-          <div className="h-full w-full rounded-lg bg-zinc-200/50" />
-          {children}
+          <div className="h-full w-full rounded-lg bg-zinc-200/50 p-4 sm:p-6">
+            {children}
+          </div>
         </div>
       </main>
 
       {/* Bottom mobile tab bar */}
-      <MobileTabBar />
+      {tabBar ?? <MobileTabBar />}
     </div>
   )
 }

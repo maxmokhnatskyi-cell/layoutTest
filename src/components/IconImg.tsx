@@ -12,10 +12,10 @@ export default function IconImg({ fallbackLabel = '', ...props }: IconImgProps) 
       <span
         aria-hidden
         className={props.className}
-        style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+        style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', ...(props.style ?? {}) }}
         title={fallbackLabel}
       >
-        <svg viewBox="0 0 24 24" width="100%" height="100%" fill="currentColor" className="opacity-60">
+        <svg viewBox="0 0 24 24" width="100%" height="100%" fill="currentColor">
           <rect x="3" y="3" width="18" height="18" rx="4" />
         </svg>
       </span>
